@@ -1,5 +1,7 @@
 import React from "react";
 
+import Layout from "../components/Layout";
+
 export default function About() {
-  return <h1>ABOUT</h1>;
+  return <Layout title="ABOUT">hoge</Layout>;
 }
