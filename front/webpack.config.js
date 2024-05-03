@@ -11,7 +11,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(j|t)sx?$/,
         use: [
           {
             loader: 'babel-loader',
@@ -34,6 +34,9 @@ module.exports = {
         type: 'asset/source',
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.ts', '.tsx']
   },
   plugins: [
     new HtmlWebpackPlugin({
