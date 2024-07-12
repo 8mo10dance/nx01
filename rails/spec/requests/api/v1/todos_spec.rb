@@ -1,22 +1,24 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Api::V1::Todos", type: :request do
+RSpec.describe 'Api::V1::Todos', type: :request do
   let(:headers) do
-    { "ACCEPT" => "application/json" }
+    { 'ACCEPT' => 'application/json' }
   end
 
-  describe "GET /api/v1/todos" do
-    subject { get "/api/v1/todos", headers: headers }
+  describe 'GET /api/v1/todos' do
+    subject { get '/api/v1/todos', headers: }
 
     before { create_list :todo, 3 }
 
     it { is_expected.to eq 200 }
   end
 
-  describe "POST /api/v1/todos" do
+  describe 'POST /api/v1/todos' do
     subject(:post_create) do
-      post "/api/v1/todos",
-           headers: headers,
+      post '/api/v1/todos',
+           headers:,
            params: { todo: todo_params }
     end
 
@@ -37,18 +39,18 @@ RSpec.describe "Api::V1::Todos", type: :request do
     end
   end
 
-  describe "GET /api/v1/todos/:id" do
-    subject { get "/api/v1/todos/#{todo.id}", headers: headers }
+  describe 'GET /api/v1/todos/:id' do
+    subject { get "/api/v1/todos/#{todo.id}", headers: }
 
     let(:todo) { create :todo }
 
     it { is_expected.to eq 200 }
   end
 
-  describe "PACTH /api/v1/todos/:id" do
+  describe 'PACTH /api/v1/todos/:id' do
     subject(:patch_update) do
       patch "/api/v1/todos/#{todo.id}",
-            headers: headers,
+            headers:,
             params: { todo: todo_params }
     end
 
@@ -79,10 +81,10 @@ RSpec.describe "Api::V1::Todos", type: :request do
     end
   end
 
-  describe "DELETE /api/v1/todos/:id" do
+  describe 'DELETE /api/v1/todos/:id' do
     subject(:delete_destroy) do
       delete "/api/v1/todos/#{todo.id}",
-             headers: headers
+             headers:
     end
 
     let(:todo) { create :todo }

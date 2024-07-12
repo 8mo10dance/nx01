@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Todo, type: :model do
   describe '#set_uuid' do
     subject(:valid?) { todo.valid? }
 
-    let(:todo) { build :todo, uuid: uuid }
+    let(:todo) { build :todo, uuid: }
 
     context 'uuid が指定されている場合' do
       let(:uuid) { Faker::Internet.uuid }

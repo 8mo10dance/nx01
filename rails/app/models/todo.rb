@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Todo < ApplicationRecord
   validates :content, presence: true
   validates :uuid, presence: true, uniqueness: true
