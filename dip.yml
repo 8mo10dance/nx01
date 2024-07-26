@@ -18,6 +18,8 @@ interaction:
   rspec:
     service: rails
     command: bundle exec rspec
+    environment:
+      RAILS_ENV: test
 
 provision:
   - dip npm install

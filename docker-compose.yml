@@ -28,7 +28,10 @@ services:
       - front
       - rails
   rails:
-    build: ./rails
+    build:
+      context: ./rails
+      args:
+        RAILS_ENV: ${RAILS_ENV:-development}
     working_dir: /app
     environment:
       MYSQL_DB_HOST: mysql
@@ -37,6 +40,7 @@ services:
       MYSQL_USER: app_user
       MYSQL_PASSWORD: password
       MYSQL_TEST_DB_HOST: mysql-test
+      RAILS_ENV: ${RAILS_ENV:-development}
     volumes:
       - ${PWD}/rails:/app
       - bundle:/usr/local/bundle
