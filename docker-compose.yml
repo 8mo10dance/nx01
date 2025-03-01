@@ -29,10 +29,10 @@ services:
       - rails
   rails:
     build:
-      context: ./rails
+      context: ./.dockerdev/ruby
       args:
         RAILS_ENV: ${RAILS_ENV:-development}
-    working_dir: /app
+    image: rails:1.0.0
     environment:
       MYSQL_DB_HOST: mysql
       MYSQL_DB_PORT: 3306
@@ -42,7 +42,7 @@ services:
       MYSQL_TEST_DB_HOST: mysql-test
       RAILS_ENV: ${RAILS_ENV:-development}
     volumes:
-      - ${PWD}/rails:/app
+      - ${PWD}/rails:/rails
       - bundle:/usr/local/bundle
     ports:
       - '3000:3000'
