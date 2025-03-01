@@ -17,7 +17,7 @@ FROM base as build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential=12.9 default-libmysqlclient-dev=1.1.0 git=1:2.39.2-1.1 pkg-config=1.8.1-1
+    apt-get install --no-install-recommends -y build-essential=12.9 default-libmysqlclient-dev=1.1.0 git=1:2.39.5-0+deb12u2 pkg-config=1.8.1-1
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
@@ -41,7 +41,7 @@ FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl=7.88.1-10+deb12u6 default-mysql-client=1.1.0 && \
+    apt-get install --no-install-recommends -y curl=7.88.1-10+deb12u8 default-mysql-client=1.1.0 && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Copy built artifacts: gems, application
