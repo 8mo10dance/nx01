@@ -27,7 +27,7 @@ services:
       - rails
   rails:
     build:
-      context: ./.dockerdev/ruby
+      context: ./rails
       args:
         RAILS_ENV: ${RAILS_ENV:-development}
     image: rails:1.0.0
