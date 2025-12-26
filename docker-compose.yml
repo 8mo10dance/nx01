@@ -18,7 +18,7 @@ services:
   nginx:
     image: nginx:1.25.4
     ports:
-      - '80:80'
+      - '8080:80'
     volumes:
       - ${PWD}/front/public:/usr/share/nginx/html
       - ${PWD}/nginx/conf.d:/etc/nginx/conf.d
