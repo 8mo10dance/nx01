@@ -41,7 +41,7 @@ FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl=7.88.1-10+deb12u8 default-mysql-client=1.1.0 && \
+    apt-get install --no-install-recommends -y curl=7.88.1-10+deb12u14 default-mysql-client=1.1.0 && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Copy built artifacts: gems, application
