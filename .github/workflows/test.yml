@@ -8,6 +8,10 @@ on:
       - '.github/workflows/test.yml'
       - 'rails/**/*'
 
+permissions:
+  contents: read
+  packages: write
+
 env:
   RAILS_ENV: test
 
